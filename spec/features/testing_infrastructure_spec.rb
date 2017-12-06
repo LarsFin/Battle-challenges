@@ -1,7 +1,10 @@
 
 feature 'Testing infrastructure' do
-  scenario 'Can run app and check page content' do
+
+  scenario 'Will use a form to ask for a player name and display on screen' do
     visit('/')
-    expect(page).to have_content 'Testing infrastructure working!'
+    fill_in :player_name, with: "Jeff"
+    click_button "Submit"
+    expect(page).to have_content 'Player Name: Jeff'
   end
 end
