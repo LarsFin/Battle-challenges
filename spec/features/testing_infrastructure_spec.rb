@@ -8,13 +8,7 @@ feature 'Testing infrastructure' do
 
   scenario 'See Player 2 Hit Points' do
     sign_in_and_play
-  expect(page).to have_content "Jim Hit Points "
-  end
-
-  scenario 'Attacking Player 2 and getting confirmation' do
-    sign_in_and_play
-    click_button "Attack"
-    expect(page).to have_content "Jeff attacked Jim!"
+  expect(page).to have_content "Jim's HP"
   end
 
 end
