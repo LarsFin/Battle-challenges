@@ -4,13 +4,11 @@ class Player
   attr_accessor :health
   HP = 100
 
-  def initialize(name)
+  def initialize(name = 'Jeff')
     @name = name
     @health = HP
   end
-  def attack(player)
-    player.attacked
-  end
+
   def attacked
     @health -= 10
   end
