@@ -12,9 +12,7 @@ describe Player do
   end
 
   describe '#attack' do
-    # it 'should attack' do
-    #   expect{player.attack(player2)}.to change{player2.health}.by(-10)
-    # end
+
     it 'should be attacked' do
       expect{player2.attacked}.to change{player2.health}.by(-10)
     end
