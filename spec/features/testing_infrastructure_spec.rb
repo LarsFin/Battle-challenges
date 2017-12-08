@@ -22,4 +22,11 @@ feature 'Testing infrastructure' do
     expect(page).to_not have_content "Jeff's turn"
     expect(page).to have_content "Jim's turn"
   end
+
+  scenario 'should display the loser' do
+    sign_in_and_play
+    18.times{attack_and_continue}
+    click_button "Attack"
+    expect(page).to have_content "Jim dead"
+  end
 end

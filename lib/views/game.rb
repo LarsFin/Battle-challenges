@@ -4,9 +4,9 @@ class Game
 
   attr_accessor :player1, :player2, :active_player
 
-  def initialize(name, name2)
-    @player1 = Player.new(name)
-    @player2 = Player.new(name2)
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
     @active_player = @player1
   end
 
@@ -20,6 +20,14 @@ class Game
 
   def inactive_player
     @player1 == @active_player ? @player2 : @player1
+  end
+
+  def loser
+    @player1.health <= 0 ? @player1 : @player2
+  end
+
+  def game_over?
+    @player1.health <= 0 || @player2.health <= 0
   end
 
 end
