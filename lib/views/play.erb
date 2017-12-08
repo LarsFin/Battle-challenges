@@ -1,11 +1,13 @@
 <h1>
   Player 1 Name: <%= @game.player1.name %>! &nbsp; &nbsp;
   Player 2 Name: <%= @game.player2.name %>! <br>
-  
+
   <%= @game.player1.name %>'s HP = <%= @game.player1.health %> &nbsp; &nbsp; &nbsp; &nbsp;
   <%= @game.player2.name %>'s HP = <%= @game.player2.health %> <br>
 
   Let's battle!!! <br>
+
+  <%= @game.active_player.name %>'s turn <br>
 
   <form action="/attack">
   <input type="submit" value="Attack">

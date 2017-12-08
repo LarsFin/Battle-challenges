@@ -8,7 +8,19 @@ feature 'Testing infrastructure' do
 
   scenario 'See Player 2 Hit Points' do
     sign_in_and_play
-  expect(page).to have_content "Jim's HP"
+    expect(page).to have_content "Jim's HP"
   end
 
+  scenario 'Displays who played the turn' do
+    sign_in_and_play
+    expect(page).to have_content "Jeff's turn"
+  end
+
+  scenario 'Should switch turn when hitting ok after attack' do
+    sign_in_and_play
+    click_button "Attack"
+    click_button("Ok")
+    expect(page).to_not have_content "Jeff's turn"
+    expect(page).to have_content "Jim's turn"
+  end
 end

@@ -1,5 +1,5 @@
-<%= @game.player1.name %> attacked <%= @game.player2.name %>!
-<%= @game.player2.name %>'s HP = <%= @game.player2.health %> <br>
-<form action='/play'>
+<%= @game.active_player.name %> attacked <%= @game.inactive_player.name %>!
+<%= @game.inactive_player.name %>'s HP = <%= @game.inactive_player.health %> <br>
+<form action='/attack' method='post'>
   <input type='submit' value='Ok'>
 </form>
